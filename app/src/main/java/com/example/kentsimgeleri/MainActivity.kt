@@ -1,7 +1,9 @@
 package com.example.kentsimgeleri
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.kentsimgeleri.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,5 +19,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.hello.text = "Hello World! I am Kotlin"
     }
+
+
+    // change to DetailActivity
+    fun changeButton(view: View) {
+        val intent = Intent(this, DetailActivity::class.java)
+        startActivity(intent)
+    }
+
 
 }
