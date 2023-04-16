@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
         // add variable to the list
-        landMarkList = ArrayList()
 
-        landMarkList.add(pedro)
+        landMarkList = ArrayList<LandMark>()
         landMarkList.add(city)
+        landMarkList.add(pedro)
         landMarkList.add(witzel)
         landMarkList.add(witzell)
 

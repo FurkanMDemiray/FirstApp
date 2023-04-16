@@ -17,6 +17,7 @@ class Adapter(val landMarkList: ArrayList<LandMark>) : RecyclerView.Adapter<Adap
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
+        //holder.binding.recyclerImageView.setImageResource(landMarkList.get(position).image)
         holder.binding.recyclerTextView.text = landMarkList.get(position).name
     }
 
