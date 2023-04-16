@@ -1,6 +1,7 @@
 package com.example.kentsimgeleri
 
 // import reclyview class from androidx library
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,12 @@ class Adapter(val landMarkList: ArrayList<LandMark>) : RecyclerView.Adapter<Adap
     override fun onBindViewHolder(holder: Holder, position: Int) {
         //holder.binding.recyclerImageView.setImageResource(landMarkList.get(position).image)
         holder.binding.recyclerTextView.text = landMarkList.get(position).name
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            intent.putExtra("landMark", landMarkList.get(position))
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

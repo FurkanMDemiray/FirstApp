@@ -1,6 +1,8 @@
 package com.example.kentsimgeleri
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kentsimgeleri.databinding.ActivityDetailBinding
 
@@ -14,9 +16,24 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
 
+        val intent = intent
+
+        val selectedLandMark = intent.getSerializableExtra("landMark") as LandMark
+
+
+        binding.hello.text = selectedLandMark.name
+        binding.textCountry.text = selectedLandMark.Country
+        binding.imageView.setImageResource(selectedLandMark.image)
+
+        print(selectedLandMark.name)
+        print(selectedLandMark.Country)
+
     }
 
-
+    fun buttonBack(view: View) {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
 
 
