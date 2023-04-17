@@ -11,10 +11,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var landMarkList: ArrayList<LandMark>
     // add data to the list
 
-    val city = LandMark("Ankara", "Turkey", R.drawable.city)
-    val pedro = LandMark("Pedro", "Mexico", R.drawable.pedro)
-    val witzel = LandMark("Witzel", "Germany", R.drawable.witzel)
-    val witzell = LandMark("Witzell", "Germany", R.drawable.witzell)
+    val city = LandMark("Ayasofya", "Turkey", R.drawable.ayasofya)
+    val pedro = LandMark("Eifel", "France", R.drawable.eifel)
+    val witzel = LandMark("Pisa", "Italy", R.drawable.pisa)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         landMarkList.add(city)
         landMarkList.add(pedro)
         landMarkList.add(witzel)
-        landMarkList.add(witzell)
 
         binding.recycler.layoutManager = LinearLayoutManager(this)
         val adapter = Adapter(landMarkList)
